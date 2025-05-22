@@ -1,0 +1,844 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior:smooth;
+}
+
+
+/* Set background for the body */
+body {
+    background: #201f31;
+    font-family: Lato, Helvetica Neue, helvetica, sans-serif;
+}
+
+/* navbar */
+.navbar {
+    background-color: transparent !important;
+    transition: background-color 0.3s ease;
+}
+
+/* Solid background after scrolling */
+.navbar.scrolled {
+    background-color: #2d2b44 !important;
+}
+
+
+/* navbar brand name */
+.navbar-brand span {
+    color: rgb(177, 88, 56);
+    font-size: 18px;
+    margin-top: 2px;
+    font-weight: bolder;
+}
+
+/* login button */
+.login:hover {
+    background-color: rgb(177, 88, 56);
+}
+
+
+
+/* Carousel */
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+     max-height: 700px;
+}
+
+
+
+
+.carousel-item::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #201f31 0, rgba(32, 31, 49, 0) 10%, #201f31 100%),
+        linear-gradient(0deg, #201f31 0, rgba(32, 31, 49, 0) 50%, #201f31 100%);
+    z-index: 1;
+
+}
+
+
+/* caption title */
+.carousel-item .carousel-caption {
+    text-align: start;
+    position: absolute;
+    top: 53%;
+    left: 38%;
+    right: 0;
+    transform: translate(-50%, -50%);
+    color: #fff;
+    z-index: 2;
+    
+   
+}
+
+/* carousel text */
+.carousel-text {
+    color: #f39c6a;
+}
+
+
+.carousel-title {
+    font-size: 40px;
+    -webkit-line-clamp: 2;
+    font-weight: 800;
+    line-height: 1.3em;
+    margin-bottom: 1.2rem;
+    display: -webkit-box;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+}
+
+.carousel-description {
+    font-size: .95em;
+    line-height: 1.6;
+    font-weight: 300;
+    margin-bottom: 1rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 600px;
+}
+
+.btn-watch {
+    background-color: #fc630a;
+    font-weight: 600;
+    color: black;
+    /* padding: 10px 25px; */
+    border-radius: 5px;
+    transition: all 0.3s;
+}
+
+.btn-watch:hover {
+    transform: scale(1.05);
+    color: black;
+    box-shadow: 0 0 15px rgba(252, 99, 10, 0.5);
+    background-color: #e06b27;
+}
+
+
+.wishlist-btn {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 2px 8px;
+}
+
+.wishlist-btn:hover {
+    transform: scale(1.1);
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #e06b27;
+  border-radius: 4px;
+}
+
+.btn-outline-light {
+  color: #f8f9fa;
+  background-color: transparent;
+  border-radius: 4px;
+}
+
+
+/* prev and next button */
+.carousel-control-prev {
+    width: 5%;
+}
+
+/* responsive */
+
+@media screen and (max-width: 576px){
+.carousel-caption p{
+    display: none;
+}
+}
+@media screen and (max-width: 768px) {
+    .carousel-item .carousel-caption {
+        top: 57%;
+        left: 40%;
+    }
+
+    .carousel-title {
+        font-size: 20px;
+    }
+
+    .carousel-item img {
+        object-fit: cover;
+        height: 70vh;
+        width: 100%;
+    }
+
+    .carousel-description {
+        display: none;
+    }
+
+    .btn-watch {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width:1299) {
+
+    .carousel-title {
+        font-size: 30px;
+        -webkit-line-clamp: 2;
+    }
+
+    .carousel-description {
+        -webkit-line-clamp: 4;
+    }
+}
+
+
+
+
+
+
+/* Trending anime */
+
+.anime-top-trending {
+    margin-bottom: 6%;
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.container {
+    max-width: 1300px;
+    width: 100%;
+}
+
+.anime_area {
+    margin-bottom: 0;
+    display: block;
+}
+
+
+
+.anime-heading .main-head {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding: 0;
+
+}
+
+.anime-top-cards {
+    position: relative;
+}
+
+.owl-carousel .top-item {
+    margin: 10px;
+
+}
+
+.anime-top-cards .owl-carousel .top-item img {
+    width: 100%;
+    height: 100%;
+    max-height: 260px;
+    object-fit: cover;
+    opacity: 0.9;
+    border-radius: 3%;
+    position: relative;
+}
+
+
+/* card heading */
+.top-item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    align-items: end;
+}
+
+.top-item a {
+    text-decoration: none;
+}
+
+.top-item-body .number {
+    text-align: center;
+    font-weight: 700;
+    font-size: 29px;
+    margin-right: 9px;
+}
+
+
+
+@media screen and (max-width:768px) {
+
+
+    .top-item-body .number {
+        display: none;
+    }
+
+
+    .top-item-body .top-hover {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: auto;
+        z-index: 9;
+        width: 60px;
+        height: 40px;
+        background-color: #f8f5f5;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .top-item-body .hover-numb {
+        font-weight: 700;
+        font-size: 18px;
+        color: black ;
+    }
+
+}
+
+
+
+
+
+
+
+/* New episodes */
+
+.new-release-episodes {
+   margin-top: 4%;
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    display: grid;
+   
+}
+
+
+.episodes {
+    max-width: 100%;
+    align-items: center;
+   
+}
+
+.episodes .image img {
+    /* width: 100%; */
+    max-width: 150px;
+    margin-right: 30px;
+    box-shadow: 0.4375rem -0.25rem 0 0 #ffffff4a, 0.4375rem -0.25rem 0 0 #000, 0.875rem -0.5rem 0 0 #ffffff38, 0.875rem -0.5rem 0 0 #000, 1.3125rem -0.75rem 0 0 hsla(0, 0%, 100%, .169), 1.3125rem -0.75rem 0 0 #000;
+}
+
+.episodes .new {
+    padding: 6px;
+    width: 100%;
+    
+}
+
+.episodes .new .new-title {
+    font-size: 15px;
+
+}
+
+@media screen and (max-width: 768px) {
+
+
+    .episodes .new {
+        padding: 0px;
+        font-size: 10px;
+       
+    }
+
+    .episodes .new .new-title {
+        font-size: 0.9rem;
+         display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+    }
+
+    .episodes .image img {
+        max-width: 150px;
+        object-fit: cover;
+    }
+
+}
+
+
+
+
+/* comments */
+
+.discussion {
+    margin-top: 2rem;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, .05);
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.disc-model {
+    padding: 3rem 0 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.disc-model .disc-model-img {
+    position: relative;
+    width: 290px;
+    height: 290px;
+    flex-shrink: 0;
+}
+
+.disc-model .disc-model-img img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    left: 0;
+    bottom: 0;
+}
+
+.disc-list {
+    padding: 10px;
+    font-family: Poppins, Arial;
+
+}
+
+.disc-content {
+    display: flex;
+    width: 100%;
+
+
+}
+
+.content {
+    padding: 15px;
+    border: 2px solid white;
+    margin: 14px;
+    font-size: 13px;
+    border-radius: 30px 0px;
+    box-shadow: 0 0 14px #fff;
+    width: 100%;
+}
+
+.content-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 5%;
+}
+
+.content-header p {
+    font-size: 12px;
+    color: grey;
+}
+
+.content .content-body {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.new-comment {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.show-comment {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    right: 30px;
+    top: 6px;
+}
+
+
+
+.disc-list .show-comment .show-data {
+    cursor: pointer;
+    display: flex;
+    position: relative;
+    margin-left: 10px;
+    width: 37px;
+    height: 16px;
+    background-color: grey;
+    border-radius: 20px;
+    user-select: none;
+}
+
+
+.disc-list .show-comment .show-data span {
+    position: absolute;
+    width: 15px;
+    height: 16px;
+    background-color: #e06b27;
+    border-radius: 50%;
+    left: calc(100% - 16px);
+
+}
+
+/* responsive */
+@media screen and (max-width:768px) {
+
+    .disc-model-img {
+        display: none !important;
+    }
+
+    .disc-model {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .disc-content {
+        margin: 10px 0;
+        font-size: 14px;
+        flex-direction: column;
+
+    }
+
+    .content {
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
+/*Popular near you*/
+
+.anime-popular {
+    margin-bottom: 4%;
+    margin-top: 6%;
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.anime_area {
+    margin-bottom: 0;
+    display: block;
+}
+
+
+
+.anime-heading .main-head {
+    font-size: 30px;
+    line-height: 1.2;
+    font-weight: 600;
+    padding: 0;
+    
+
+}
+
+.owl-carousel .item {
+    margin: 10px;
+
+}
+
+.owl-carousel .item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    opacity: 0.9;
+}
+
+
+
+/* card heading */
+.item {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    transition: 0.5s ease-in-out;
+
+}
+
+.item:hover {
+    transform: translateY(-14px);
+}
+
+.hover-info {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(17, 17, 17, 0.9);
+    /* dark transparent background */
+    color: #fff;
+    padding: .74rem;
+    display: flex;
+    font-size: 15px;
+    flex-direction: column;
+    justify-content: center;
+    opacity: 0;
+    border-radius: 10px;
+    transition: opacity 0.3s ease-in-out;
+    z-index: 10;
+
+}
+
+
+.item:hover .hover-info {
+    opacity: 1;
+    /* pointer-events: auto; */
+}
+
+
+.hover-info .card-detail{
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 12px;
+}
+
+.item a {
+    text-decoration: none;
+}
+
+.item-body h6 {
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    line-height: 1.4rem;
+    font-size: 17px;
+}
+
+
+.owl-theme .owl-nav {
+    display: none;
+}
+
+.owl-theme .owl-dots {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px) {
+    .item-body h6 {
+        -webkit-line-clamp: 2;
+        line-height: 1rem;
+        font-size: 16px;
+    }
+
+    .hover-info .card-detail {
+        display: none;
+    }
+
+    .owl-carousel .item img {
+    height: 100%;
+    width: 100%;
+}
+
+
+}
+
+
+
+@media screen and (max-width:576px) {
+
+    .card-title,
+    .card-text {
+        font-size: 15px;
+    }
+
+    .hover-info .card-description {
+        display: none;
+    }
+
+}
+
+
+
+/* hindi dubbed anime */
+.dubbed-anime{
+    margin-top: 4%;
+    animation: dubbed ease;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    transition-duration: 4s;
+    transition-timing-function: ease;
+}
+@keyframes dubbed {
+    from {
+
+        transform: translatey(100px);
+         
+    }
+
+    to {
+
+        transform: translateY(0px);
+        
+    }
+
+}
+
+
+
+/* single card */
+.single-card{
+    margin-top: 4%;
+    margin-bottom: 6%;
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+.single-show-card {
+    display: flex;
+    position: relative;
+    align-items: center;
+    flex-direction: row;
+    gap: 0.75rem;
+    padding-left:10px;
+    padding-right:10px ;
+    /* flex-wrap: wrap; */
+}
+
+.show-card-description{
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+@media screen and (max-width:768px)
+ {
+    .single-show-card{
+        align-items: flex-start;
+        text-align: left;
+        flex-wrap: wrap;
+    }
+
+}
+
+@media screen and (max-width:576px) {
+    .single-show-card{
+        gap: 1.75rem;
+    }
+}
+
+
+
+.movie-area{
+    animation: dubbed linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+
+/* Library */
+.still {
+    animation: model linear;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+@keyframes model {
+    from {
+        opacity: 0;
+        scale: 0;
+        transform: translateY(-100px);
+    }
+
+    to {
+        opacity: 0.9;
+        scale: 1;
+        transform: translateX(0px);
+    }
+}
+
+
+.look {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-block-start: .625rem;
+    text-align: center;
+    margin: 40px 0 40px;
+}
+
+.look a {
+    color: #ff640a;
+    font-weight: 600;
+    padding: 5px 15px;
+    border: 2px solid #ff640a;
+}
+
+.look a:hover {
+    color: #ff640a;
+}
+
+
+/* footer */
+.footer-area {
+
+    padding: 35px;
+    flex-wrap: wrap;
+    animation: foo;
+    background: linear-gradient(to bottom,#201f31,#2e2c41);
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes foo {
+    from {
+
+        transform: translatey(200px);
+    }
+
+    to {
+
+        transform: translateY(0px);
+    }
+
+}
+
+.list-unstyled li a {
+    color: grey;
+    text-decoration: none;
+}
+
+
+.list-unstyled li a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
